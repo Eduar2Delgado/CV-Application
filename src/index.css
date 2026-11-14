@@ -37,19 +37,24 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-base: #0F172A;
-    --bg-card: #1E293B;
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --bg-base: #0b1724;
+    --bg-card: #142a3d;
+    --text: #b5cbdc;
+    --text-h: #e8f3fa;
+    --border: #345269;
+    --code-bg: #1b3448;
+    --accent: #38bdf8;
+    --secondary: #163d56;
+    --accent-bg: rgba(56, 189, 248, 0.14);
+    --accent-border: rgba(56, 189, 248, 0.55);
+    --social-bg: rgba(30, 58, 81, 0.7);
+    --surface-container-high: #29445a;
+    --on-surface-variant: #c3d5e0;
+    --accent-container: #164664;
+    --on-surface: #e6f4ff;
     --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+      rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 
   #social .button-icon {
