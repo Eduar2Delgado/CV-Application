@@ -1,16 +1,23 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
+  --bg-base: #e8edf7;
+  --bg-card: #F8FCFF;
+  --text: #175385fb;
+  --text-h: #0c2d48;
+  --border: #8291a9;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
+  --accent: #0369A1;
+  --secondary: #E0F2FE;
   --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
+  --shadow: rgba(12, 45, 72, 0.12) 0 8px 20px -4px;  --surface-container-high: var(--lumi-sys-color--surface-container-high, #e6e6e6);
+  --on-surface-variant: var(--lumi-sys-color--on-surface-variant, rgba(0, 0, 0, 0.62));
+  --accent-container: var(--lumi-sys-color--accent-container, #dcf1ff);
+  --on-surface: var(--lumi-sys-color--on-surface, #000000);
+  --r-full: var(--lumi-sys-shape--full, 999px);
+  --lumi-sys-shape--full: 999px;
+  
+  --spacing-m: var(--lumi-sys-spacing--m, 12px);
+  --lumi-sys-spacing--m: 12px;
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -18,8 +25,6 @@
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,6 +37,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --bg-base: #0F172A;
+    --bg-card: #1E293B;
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
@@ -50,20 +57,28 @@
   }
 }
 
-body {
-  margin: 0;
+#root {
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+.app-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-base);
+}
+
+span{
+  color: var(--text-h);
+  font-weight: 400;
+  font-size: 20px;
 }
 
 h1,
@@ -74,7 +89,7 @@ h2 {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 30px;
   letter-spacing: -1.68px;
   margin: 32px 0;
   @media (max-width: 1024px) {
@@ -93,19 +108,18 @@ h2 {
 }
 p {
   margin: 0;
+  color: var(--text);
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+header {
+  text-align: center;
+  flex-direction: column;
+  grid-column: span 2;
+  align-items: center;
+  display: flex;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+header h1 {
+  font-size: 3rem;
 }
+
